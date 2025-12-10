@@ -8,7 +8,7 @@ import numpy as np
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(
     static_image_mode=False,
-    max_num_hands=1,
+    max_num_hands=2,
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5)
 
@@ -23,8 +23,8 @@ SCREEN_WIDTH, SCREEN_HEIGHT = pyautogui.size()
 print(f"Screen Size: {SCREEN_WIDTH}x{SCREEN_HEIGHT}")
 
 # Define the region of interest (ROI) and smoothing parameters
-SMOOTHING_FACTOR = 9  # Higher value means smoother, but slower, movement
-FRAME_REDUCTION = 100 # Reduces the capture frame size to define a movement area
+SMOOTHING_FACTOR = 5  # Higher value means smoother, but slower, movement
+FRAME_REDUCTION = 50 # Reduces the capture frame size to define a movement area
 
 # Variables for smoothing (Exponentially Weighted Moving Average)
 prev_x, prev_y = 0, 0
